@@ -1,98 +1,78 @@
-Customer Churn Prediction – End-to-End ML Pipeline
+# Customer Churn Prediction – End-to-End ML Pipeline
 
 This project implements a complete machine learning pipeline to predict customer churn using the Telco Customer Churn dataset. It covers data preprocessing, EDA, feature engineering, imbalance handling, model training, and performance evaluation.
 
-1. Project Objective
+---
 
+## 1. Project Objective
 Build a predictive model that identifies whether a customer is likely to churn, enabling data-driven retention strategies.
 
-2. Dataset
+---
 
-File: Telco_customer_churn.xlsx
-Target Variable: Churn Value (0 = No churn, 1 = Churn)
+## 2. Dataset
+**File:** `Telco_customer_churn.xlsx`  
+**Target Variable:** `Churn Value` (0 = No churn, 1 = Churn)
 
 Dataset contains:
+- Customer demographics  
+- Subscription details  
+- Billing information  
+- Churn indicators  
 
-Customer demographics
+---
 
-Subscription details
+## 3. Workflow Summary
 
-Billing information
+### ✔ Data Cleaning
+- Converted `Total Charges` to numeric  
+- Removed high-missing columns  
+- Dropped irrelevant starting columns  
+- Handled missing values  
+- Removed outliers using IQR  
 
-Churn indicators
+### ✔ Exploratory Data Analysis (EDA)
+- Churn distribution  
+- Numeric feature distributions  
+- Tenure vs Churn  
+- Contract type vs Churn  
+- Correlation heatmap  
 
-3. Workflow Summary
-✔ Data Cleaning
+### ✔ Feature Engineering
+- One-Hot Encoding for categorical features  
+- Standard scaling for numerical features  
+- Class imbalance handled using **SMOTE**
 
-Converted Total Charges to numeric
+### ✔ Modeling
+Models trained:
+- Logistic Regression  
+- Random Forest  
+- XGBoost  
 
-Removed high-missing columns
+Evaluated using:
+- Accuracy  
+- Precision  
+- Recall  
+- F1-Score  
+- Confusion Matrix  
 
-Dropped irrelevant starting columns
-
-Handled missing values
-
-Removed outliers via IQR
-
-✔ EDA
-
-Distribution plots
-
-Boxplots (outlier detection)
-
-Churn distribution
-
-Tenure vs Churn analysis
-
-Correlation heatmap
-
-✔ Feature Engineering
-
-One-Hot Encoding for categorical features
-
-Scaling for numeric features
-
-Class imbalance handled via SMOTE
-
-✔ Modeling
-
-Trained and evaluated three models:
-
-Logistic Regression
-
-Random Forest
-
-XGBoost
-
-Metrics evaluated:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-Score
-
-Confusion Matrix
-
-✔ Model Saving
-
-Best model exported using:
-
+### ✔ Model Saving
+```
 joblib.dump(model, "best_churn_model.pkl")
+```
 
-4. Repository Structure
+---
+
+## 4. Repository Structure
+```
 ├── Customer_Churn_prediction.ipynb
 ├── Telco_customer_churn.xlsx
 └── README.md
+```
 
-5. Key Outcomes
+---
 
-Fully cleaned & transformed dataset
-
-Balanced training data using SMOTE
-
-Multiple model comparison
-
-Deployment-ready model file
+## 5. Key Outcomes
+- Cleaned and transformed dataset  
+- Balanced training data using SMOTE  
+- Compared multiple ML models  
+- Exported best-performing model  
