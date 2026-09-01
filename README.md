@@ -44,9 +44,7 @@ Dataset contains:
 
 ### ✔ Modeling
 Models trained:
-- Logistic Regression  
-- Random Forest  
-- XGBoost  
+- Logistic Regression
 
 Evaluated using:
 - Accuracy  
